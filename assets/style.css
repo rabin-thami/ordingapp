@@ -5,10 +5,10 @@ body {
 }
 
 main {
-    width: 35%;
+    width: 30%;
     min-width: 350px;
-    background-color: aqua;
     margin: 0 auto;
+    position: relative;
 }
 
 header {
@@ -20,4 +20,119 @@ header {
 
 header h1, p {
     margin: 0;
+}
+
+
+.item-list ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item-list ul li {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5em 1.5em;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid #000;
+}
+
+.item-emoji {
+    font-size: 4.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.item-info-container .item-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.item-info-container .item-price {
+    font-weight: bold;
+}
+
+.item-list ul li button {
+    margin-left: auto;
+}
+
+
+.cartBtn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+/* confirm order starat from here */
+
+.confirm-order h3 {
+    text-align: center;
+}
+
+.confirm-order ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #000;
+}
+
+.confirm-order ul li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    
+}
+
+.cart-item-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.confirm-order ul li p:last-child {
+    margin-left: auto;
+    font-weight: bold;
+}
+
+.total {
+    font-weight: bold;
+    margin: 1.1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.complete-order {
+    width: 100%;
+    padding: 1em 1.5em;
+    background-color: #16DB99;
+    color: #fff;
+    font-size: 1.1rem;
+    border:none;
+    cursor: pointer;
+}
+
+
+.card-info-container {
+    position: absolute;
+    width: 80%;
+    top: 20%;
+    left: 7%;
+    background-color: #fff;
+    padding: 1.1em;
+}
+.card-info-container .close {
+    position: absolute;
+    font-size: 1.8rem;
+    top: -20px;
+    left: 98%;
+    color: #000;
+}
+
+.card-info-container .close:hover {
+    color: #16DB99;
+    cursor: pointer;
+}
+.card-info-container h3 {
+    text-align: center
 }
