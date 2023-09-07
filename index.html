@@ -17,26 +17,17 @@
             <p>The best burgers and pizzas in town.</p>
         </header>
         <section class="item-list">
-            <ul>
-                <li>
-                    <p class="item-emoji">🍕</p>
-                    <div class="item-info-container">
-                        <p class="item-name">Pizza</p>
-                        <p class="item-ingredients">pepperoni,mushrom,mozarella</p>
-                        <p class="item-price">$14</p>
-                    </div>
-                    <button class="cartBtn"><i class="fa-regular fa-plus"></i></button>
-                </li>
+            <ul class="item-container">
             </ul>
         </section>
-        <section class="confirm-order">
+        <section class="confirm-order hidden">
             <h3>Your Order</h3>
-            <ul>
-                <li>
+            <ul class="cart-list">
+                <!-- <li>
                     <p class="cart-item-name">Pizza</p>
                     <p class="remove-cart">remove</p>
                     <p>$14</p>
-                </li>
+                </li> -->
             </ul>
             <div class="total">
                 <p>Total Price</p>
@@ -44,8 +35,7 @@
             </div>
             <button class="complete-order">Complete order</button>
         </section>
-
-        <section class="card-info-container">
+        <section class="card-info-container hidden">
             <p class="close"><i class="fa-solid fa-circle-xmark"></i></i></p>
             <h3>Enter card details</h3>
             <div>
@@ -55,6 +45,11 @@
                 <button class="complete-order">Pay</button>
             </div>
         </section>
+        <section class="thank-you hidden">
+            <p>Thank you</p>
+        </section>
     </main>
+    <script type="module" src="assets/script.js"></script>
+    <script></script>
 </body>
 </html>
