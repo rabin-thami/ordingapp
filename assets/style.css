@@ -110,6 +110,7 @@ header h1, p {
     font-size: 1.1rem;
     border:none;
     cursor: pointer;
+    border-radius: 3px;
 }
 
 
@@ -136,3 +137,18 @@ header h1, p {
 .card-info-container h3 {
     text-align: center
 }
+
+.card-info-container input {
+    width: 90%;
+    padding: 0.8em 0.9em;
+    margin: 0.5em;
+    border-radius: 3px;;
+}
+
+.card-info-container ::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0; 
+}
+
+
