@@ -23,26 +23,23 @@
         <section class="confirm-order hidden">
             <h3>Your Order</h3>
             <ul class="cart-list">
-                <!-- <li>
-                    <p class="cart-item-name">Pizza</p>
-                    <p class="remove-cart">remove</p>
-                    <p>$14</p>
-                </li> -->
             </ul>
             <div class="total">
                 <p>Total Price</p>
-                <p>$14</p>
+                <p id="totalPrice"></p>
             </div>
-            <button class="complete-order">Complete order</button>
+            <button class="complete-order" id="completeOrder">Complete order</button>
         </section>
         <section class="card-info-container hidden">
-            <p class="close"><i class="fa-solid fa-circle-xmark"></i></i></p>
+            <p class="close">
+                <i id="closePopUp" class="fa-solid fa-circle-xmark"></i>
+            </p>
             <h3>Enter card details</h3>
             <div>
-                <input type="text" name="userName" placeholder="Enter Your Name"/>
-                <input type="number" maxlength="16" placeholder="Entrer card Number">
-                <input type="number" maxlength="3" placeholder="Entrer CVV">
-                <button class="complete-order">Pay</button>
+                <input type="text" id="userName" placeholder="Enter Your Name"/>
+                <input type="number" maxlength="16" placeholder="Entrer card Number" id="cardNumber">
+                <input type="number" maxlength="3" placeholder="Entrer CVV" id="CVV">
+                <button class="complete-order" id="pay">Pay</button>
             </div>
         </section>
         <section class="thank-you hidden">
