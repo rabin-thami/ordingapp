@@ -4,7 +4,21 @@ let renderEl = document.querySelector(".item-container");
 let cartEl = document.querySelector(".cart-list")
 let totalEl = document.querySelector("#totalPrice")
 let cartlist = []
-
+const duplicatesArray = []
+function handleDuplicates(productId) {
+    const idx = cartlist.findIndex(item => item.id == productId)
+    cartlist[idx].quantity++
+}
+function handleNewItem(productId) {
+    duplicatesArray.push(productId)
+        menuArray.forEach(cartItem => {
+            if (cartItem.id === productId) {
+                document.querySelector(".confirm-order").classList.remove("hidden")
+                cartlist.push(cartItem);
+                
+            }
+        });
+}
 
 document.addEventListener('click', (e) => {
     const productId = parseInt(e.target.dataset.productId);
@@ -15,15 +29,15 @@ document.addEventListener('click', (e) => {
             cartlist.splice(indexToRemove, 1)
             addToCart()
         }
-    } else if (!cartlist.filter(item => item.id === productId).includes(true)) {
-        menuArray.forEach(cartItem => {
-            if (cartItem.id === productId) {
-                document.querySelector(".confirm-order").classList.remove("hidden")
-                cartlist.push(cartItem);
-                addToCart();
-            }
-        });
+    } 
+    
+    if (e.target.classList.contains('cartBtn')) {
+        const isDuplicate = duplicatesArray.includes(productId)
+        
+        isDuplicate ? handleDuplicates(productId) : handleNewItem(productId)
+        addToCart()
     }
+
     
     if (e.target.id === 'completeOrder'){
         document.querySelector(".card-info-container").classList.remove('hidden')
@@ -45,6 +59,7 @@ function addToCart() {
         cartEl.innerHTML += `
             <li>
                 <p class="cart-item-name">${cartElement.name}</p>
+                <p>x${cartElement.quantity}</p>
                 <p class="remove-cart">remove</p>
                 <p>$ ${cartElement.price}</p>
             </li>
@@ -55,15 +70,7 @@ function addToCart() {
 
 function totalPrice() {
     let total = 0
-    if (cartlist && cartlist.length > 0) {
-        cartlist.forEach(cartElement => {
-            if(cartElement.price !== null) {
-                total += cartElement.price
-            }
-        })
-    } else {
-        total = 0
-    }
+    cartlist.forEach(item => total = total + (item.price * item.quantity))
     totalEl.innerHTML = "$" + total
 }
 
